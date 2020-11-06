@@ -2,9 +2,10 @@
 
 namespace Domain\Auth\User\Contracts;
 
-use Domain\Auth\User\UserService;
+use App\Models\User;
+use Domain\Auth\User\Entity\UserEntity;
 
 interface IUserRepository
 {
-    public function save(UserService $entity);
+    public function save(UserEntity $entity): User;
 }

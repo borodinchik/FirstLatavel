@@ -2,13 +2,23 @@
 
 namespace Domain\Auth\User;
 
-use Domain\Auth\User\Entity\UserEntity;
+use App\Models\User;
+use Domain\Auth\User\Contracts\IUserRepository;
 use Domain\Auth\User\Contracts\IUserService;
+use Domain\Auth\User\Entity\UserEntity;
+use Illuminate\Database\Eloquent\Model;
 
 class UserService implements IUserService
 {
-    public function save(UserEntity $entity)
+    private IUserRepository $userRepository;
+
+    public function __construct(IUserRepository $userRepository)
     {
-        // TODO: Implement save() method.
+        $this->userRepository = $userRepository;
+    }
+
+    public function save(UserEntity $entity): User
+    {
+      return $this->userRepository->save($entity);
     }
 }

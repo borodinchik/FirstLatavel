@@ -161,7 +161,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        \App\Providers\UserProvider::class,
+        /**Domain Providers**/
+        Domain\Auth\User\UserServiceProvider::class,
 
         /*
          * Package Service Providers...

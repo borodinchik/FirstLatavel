@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Auth\User\Address\Entity;
+namespace Domain\Auth\User\Entity;
 
 use \Domain\Auth\User\Address\Entity\UserAddressEntity;
 
@@ -53,7 +53,7 @@ class UserEntity
             'last_name' => $this->lastName,
             'email' => $this->email,
             'password' => $this->password,
-            'address' => $this->address-toArray(),
+            'address' => $this->address->toArray(),
         ];
     }
 }

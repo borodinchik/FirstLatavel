@@ -25,17 +25,16 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => 'required|string|min:3',
-            'last_name' => 'required|string|min:3',
-            'email' => 'required|email',
-            'password' => ['required', new UserPassword],
-            'address' => [
-                'city' => 'string',
-                'code' => 'int',
-                'state' => 'string',
-                'street' => 'string',
-                'country' => 'string',
-            ]
+            'first_name' => 'string',
+            'last_name' => 'string',
+            'email' => 'string',
+            'password' => ['string' , new UserPassword],
+            'address' => 'required|array',
+            'address.city' => 'string',
+            'address.code' => 'int',
+            'address.state' => 'string',
+            'address.street' => 'string',
+            'address.country' => 'string',
         ];
     }
 }
